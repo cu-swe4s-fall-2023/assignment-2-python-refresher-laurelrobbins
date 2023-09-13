@@ -5,6 +5,7 @@ import my_utils
 
 #if country_column = country, add it to array. This is how we pick specific fields from the data set. 
 #country 
+
 query_value = 'United States of America'
 query_column = 0
 result_column = 3
