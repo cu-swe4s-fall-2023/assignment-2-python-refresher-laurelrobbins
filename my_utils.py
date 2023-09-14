@@ -1,6 +1,6 @@
 import csv
 
-def get_column(file_name, query_column, query_value, result_column):
+def get_column(file_name, query_column, query_value, result_column=1): #default to result_column=1 if not named
     array = [] #empty list for data to go in
     with open(file_name, newline='') as simpler:
         csv_reader = csv.reader(simpler)
