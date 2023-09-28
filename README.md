@@ -16,7 +16,18 @@ In a shell script (run.sh), input the three required parameters file_name, query
 Output in this example: list containing the number of fires in different years for only the Unites States of America. 
 
 # Installing software
-To install software, clone updated version from github. Use any csv file formatted where data is sorted by columns. 
+1.) clone assignment-2-python-refresher-laurelrobbins from github. 
+2.) download Agrofood_co2_emission.csv
+3.) move Agrofood_co2_emission.csv to src folder
+4.) change working directory to follow path of cloned repository and into src folder
+5.) in run.sh file, use:
 
+python print_fires.py --file_name 'Agrofood_co2_emission.csv' --query_column <query column of interest> --query_value <query value of interest> --result_column <result column of interest>
+
+example of input: 
+python print_fires.py --file_name 'Agrofood_co2_emission.csv' --query_column 0 --query_value 'United States of America' --result_column 3
+
+6.) In the command line, run the shell file using: bash run.sh
+    
 
 
