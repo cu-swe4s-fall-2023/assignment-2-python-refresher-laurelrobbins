@@ -17,9 +17,13 @@ Output in this example: list containing the number of fires in different years f
 
 # Installing software
 1.) clone assignment-2-python-refresher-laurelrobbins from github. 
+
 2.) download Agrofood_co2_emission.csv
+
 3.) move Agrofood_co2_emission.csv to src folder
+
 4.) change working directory to follow path of cloned repository and into src folder
+
 5.) in run.sh file, use:
 
 python print_fires.py --file_name 'Agrofood_co2_emission.csv' --query_column <query column of interest> --query_value <query value of interest> --result_column <result column of interest>
