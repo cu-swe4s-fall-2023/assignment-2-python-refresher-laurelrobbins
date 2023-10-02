@@ -65,3 +65,33 @@ def get_column(file_name,
             if row[query_column] == query_value:
                 array.append(row[result_column])
     return array
+
+
+def mean(array):
+    mean = sum(array)/len(array)
+
+    return mean
+
+
+def median(array):
+    array.sort()
+    # if odd number of values
+    if len(array) % 2 == 1:
+        median = array[((len(array)) // 2)]
+    # if even number of values
+    if len(array) % 2 != 1:
+        med1 = array[((len(array)-1) // 2)]
+        med2 = array[((len(array)) // 2)]
+        median = (med1+med2) / 2
+
+    return median
+
+
+# I asked ChatGGPT how to find std dev of a sample without importing a library
+def std_dev(array):
+    mean = sum(array) / len(array)
+    squared_diff = [(x - mean) ** 2 for x in array]
+    variance = sum(squared_diff) / (len(array)-1)
+    std_dev = variance ** 0.5
+
+    return std_dev
