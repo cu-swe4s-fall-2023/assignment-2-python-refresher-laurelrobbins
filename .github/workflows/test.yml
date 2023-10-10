@@ -1,8 +1,15 @@
+<<<<<<< HEAD
 on: 
     push:
         branches: [ master ]
     pull_request:
         branches: [ master ]
+=======
+on: push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+>>>>>>> d500aedecb43fab8e3e2505d7d64216b1b74d7bd
 
 jobs:
     run_unit_tests:
