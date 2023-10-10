@@ -1,7 +1,7 @@
 import argparse
 import csv
 import sys
-import statistics 
+import statistics
 
 
 def get_args():
@@ -24,9 +24,9 @@ def get_args():
                         type=int,
                         help='data from the value you selected',
                         required=False)
-    parser.add_argument('--operation', 
-                        type=str, 
-                        choices=['mean', 'median', 'std dev'], 
+    parser.add_argument('--operation',
+                        type=str,
+                        choices=['mean', 'median', 'std dev'],
                         help='Calculate mean, median, or std dev of values',
                         required=False)
 
@@ -72,7 +72,7 @@ def get_column(file_name,
                 if row[query_column] == query_value:
                     array.append(row[result_column])
             except IndexError:
-                  sys.exit('Column does not exist. Check result_column input.')
+                sys.exit('Column does not exist. Check result_column input.')
     return array
 
 
@@ -104,7 +104,7 @@ def median(array):
 def std_dev(array):
     if len(array) == 0:
         std_dev = None
-    elif len(array) >0:
+    elif len(array) > 0:
         mean = sum(array) / len(array)
         squared_diff = [(x - mean) ** 2 for x in array]
         variance = sum(squared_diff) / (len(array)-1)
@@ -114,6 +114,6 @@ def std_dev(array):
 
     return std_dev
 
+
 def string_list_convert(array):
     return list(map(float, array))
-
