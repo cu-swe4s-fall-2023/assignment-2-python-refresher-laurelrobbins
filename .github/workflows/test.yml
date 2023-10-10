@@ -24,4 +24,6 @@ jobs:
         runs-on: ubuntu-latest
         steps:
           - uses: actions/checkout@v2
-          - run: pycodestyle $(git ls-files "*.py")
+          - run: |
+              pip install pycodestyle
+              pycodestyle $(git ls-files "*.py")
