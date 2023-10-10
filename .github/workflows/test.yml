@@ -19,3 +19,9 @@ jobs:
             - uses: actions/checkout@v2
             - run: |
                 bash test/func/test_print_fires.sh    
+    
+    run_style_check:
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v2
+          - run: pycodestyle $(git ls-files "*.py")
