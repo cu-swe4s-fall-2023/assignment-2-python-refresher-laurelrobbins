@@ -1,10 +1,9 @@
+import sys
+sys.path.insert(0, '../../src')  # noqa
 import unittest
 import my_utils
 import random
 import statistics
-import sys
-
-sys.path.insert(0, '../../src')
 
 a = random.randint(-100, 100)
 b = random.randint(-100, 100)
