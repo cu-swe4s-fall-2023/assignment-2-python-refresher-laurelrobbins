@@ -1,5 +1,7 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/oQi7O4AA)
 
+test
+
 # Running functional tests
 For functional tests to work, esure that you are in the assignment-2-python-refresher-laurelrobbins directory. From there, in the command line run: bash test/func/test_print_fires.sh
 
