@@ -6,7 +6,7 @@ out_file = sys.argv[3]
 
 
 f = open(out_file, 'w')
-for l in open(file_name):
-    A = l.rstrip().split(',')
+for loop in open(file_name):
+    A = loop.rstrip().split(',')
     if A[0] == country_name:
         f.write(str(float(A[2]) + float(A[3])) + '\n')
