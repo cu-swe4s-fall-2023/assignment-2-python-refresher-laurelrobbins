@@ -1,5 +1,18 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/oQi7O4AA)
 
+# Report for Assignment 7
+Introduction: 
+This report includes data for wildfires in three countries, Brazil, Canada, and Mexico. Evaluating fires is an important part of wildlife conservation. 
+
+Results: 
+
+![Brazil](doc/Brazil.png?raw=true "Brazil")
+![Canada](doc/Canada.png?raw=true "Canada")
+![Mexico](doc/Mexico.png?raw=true "Mexico")
+
+Methods:
+To get these results, a snakemake workflow was used which first downloaded data from a public dataset, then pulled out data of interest from the csv file, and finally plotted the data in a histogram format using the matplotlib library.
+
 # my_utils.py 
 Purpose: contains a function get_column which uses the four variables file_name, query_column, query_value, result_column to pull specified data from a csv file and put the outputs within a list. 
 file_name = the name of the csv file with the data you want to pull from
@@ -36,5 +49,4 @@ python print_fires.py --file_name 'Agrofood_co2_emission.csv' --query_column 0 -
 
 6.) In the command line, run the shell file using: bash run.sh
     
-
 
