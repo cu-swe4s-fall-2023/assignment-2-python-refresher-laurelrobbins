@@ -1,0 +1,34 @@
+file_name = 'Agrofood_co2_emission.csv'
+
+def read_countries(file_name):
+    countries = []
+    with open(file_name) as f:
+        for l in f:
+            countries.append(l.rstrip())
+    return countries
+
+rule all:
+    input:
+        expanded_countries = expand('{country}.png', country=read_countries('countries.txt'))
+
+rule download_data:
+    output: 
+        'Argrofood_co2_emission.csv'
+    shell: 
+        'wget -O {output} "https://docs.google.com/uc?export=download&id=1Wytf3ryf9EtOwaloms8HEzLG0yjtRqxr"'
+            
+rule get_data:
+    input:
+        'Argrofood_co2_emission.csv'
+    output:
+        '{x}.country_data.txt'
+    shell:
+        'python get_data.py "{input}" "{wildcards.x}" "{output}"'
+
+rule plot_data:
+    input:
+        '{w}.country_data.txt'
+    output:
+        '{w}.png'
+    shell:
+        'python hist.py "{input}" "{wildcards.w}" "Fires Frequency" "Number of Fires" "Frequency of Fires"'

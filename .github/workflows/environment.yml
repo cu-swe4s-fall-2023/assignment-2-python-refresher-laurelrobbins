@@ -1,0 +1,10 @@
+name: swe4s
+
+channels:
+  - defaults
+  
+dependencies:
+  - python=3.4
+  - numpy
+  - snakemake
+  - matplotlib
