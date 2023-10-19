@@ -17,9 +17,9 @@ jobs:
     
   run_func_tests:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        shell: [bash -el '{0}']
+    defaults:
+      run:
+        shell: bash -el {0}  
     steps:
       - uses: actions/checkout@v2
       - uses: conda-incubator/setup-miniconda@v2
@@ -31,9 +31,9 @@ jobs:
     
   run_style_check:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        shell: [bash -el '{0}']
+    defaults:
+      run:
+        shell: bash -el {0}  
     steps:
       - uses: actions/checkout@v2
       - uses: conda-incubator/setup-miniconda@v2
