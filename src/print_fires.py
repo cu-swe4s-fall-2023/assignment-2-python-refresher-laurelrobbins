@@ -10,7 +10,7 @@ def main():
     try:
         file_name = args.file_name
     except AttributeError:
-        print("possibly wrong variable type. Check argumant formatting")
+        print("possibly wrong variable type. Check argument formatting")
     try:
         result_columm = args.result_column
     except AttributeError:
@@ -24,19 +24,16 @@ def main():
     operation = args.operation
 
     if operation == 'mean':
-        result = ('mean: ' +
-                  str(my_utils.mean(my_utils.string_list_convert(fires))))
+        result = my_utils.mean(my_utils.string_list_convert(fires))
     elif operation == 'median':
-        result = ('median: ' +
-                  str(my_utils.median(my_utils.string_list_convert(fires))))
+        result = my_utils.median(my_utils.string_list_convert(fires))
     elif operation == 'std dev':
-        result = ('std dev of the sample: ' +
-                  str(my_utils.std_dev(my_utils.string_list_convert(fires))))
+        result = my_utils.std_dev(my_utils.string_list_convert(fires))
     else:
-        result = ('List of values: ' +
-                  str((my_utils.string_list_convert(fires))))
+        result = my_utils.string_list_convert(fires)
 
-    print(result)
+    for item in result:
+        print(item)
 
 
 if __name__ == "__main__":
