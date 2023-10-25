@@ -16,29 +16,27 @@ jobs:
           python -m unittest test_my_utils.py    
     
   run_func_tests:
-    runs-on: ubuntu-latest
     defaults:
       run:
         shell: bash -el {0}  
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: conda-incubator/setup-miniconda@v2
         with:
           environment-file: environment.yml
       - run: |
-          conda activate swe4s
           bash test/func/test_print_fires.sh    
     
   run_style_check:
-    runs-on: ubuntu-latest
     defaults:
       run:
-        shell: bash -el {0}  
+        shell: bash -el {0} 
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: conda-incubator/setup-miniconda@v2
         with:
           environment-file: environment.yml
       - run: |
-          conda activate swe4s
           pycodestyle $(git ls-files "*.py")
