@@ -26,7 +26,8 @@ jobs:
         with:
           environment-file: environment.yml
       - run: |
-          bash test/func/test_print_fires.sh    
+            conda activate swe4s
+            bash test/func/test_print_fires.sh  
     
   run_style_check:
     defaults:
@@ -39,4 +40,5 @@ jobs:
         with:
           environment-file: environment.yml
       - run: |
+          conda activate swe4s
           pycodestyle $(git ls-files "*.py")
