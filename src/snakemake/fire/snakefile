@@ -36,4 +36,4 @@ rule get_and_plot_data:
         --result_column "2" > {wildcards.x}.txt
         python hist.py "{wildcards.x}.txt" "{wildcards.x}.png" "Fires Frequency" "Number of Fires" "Frequency of Fires"
         '''
-
+        
