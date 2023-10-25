@@ -16,19 +16,24 @@ rule download_data:
         'Argrofood_co2_emission.csv'
     shell: 
         'wget -O {output} "https://docs.google.com/uc?export=download&id=1Wytf3ryf9EtOwaloms8HEzLG0yjtRqxr"'
-            
-rule get_data:
+        
+rule get_and_plot_data:
     input:
         'Argrofood_co2_emission.csv'
     output:
-        '{x}.country_data.txt'
+        '{x}.png'
+    params:
+        file_name='Argrofood_co2_emission.csv',
+        query_column=0,
+        query_value=lambda wildcards: wildcards.x,
+        result_column=2
     shell:
-        'python get_data.py "{input}" "{wildcards.x}" "{output}"'
+        '''
+        python ../../print_fires.py \
+        --file_name "{input}" \
+        --query_column "0" \
+        --query_value "{wildcards.x}" \
+        --result_column "2" > {wildcards.x}.txt
+        python hist.py "{wildcards.x}.txt" "{wildcards.x}.png" "Fires Frequency" "Number of Fires" "Frequency of Fires"
+        '''
 
-rule plot_data:
-    input:
-        '{w}.country_data.txt'
-    output:
-        '{w}.png'
-    shell:
-        'python hist.py "{input}" "{wildcards.w}" "Fires Frequency" "Number of Fires" "Frequency of Fires"'
