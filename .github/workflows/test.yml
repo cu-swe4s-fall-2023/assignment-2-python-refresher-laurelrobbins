@@ -26,6 +26,7 @@ jobs:
         with:
           environment-file: environment.yml
       - run: |
+          source activate swe4s
           bash test/func/test_print_fires.sh    
     
   run_style_check:
@@ -39,4 +40,5 @@ jobs:
         with:
           environment-file: environment.yml
       - run: |
+          source activate swe4s
           pycodestyle $(git ls-files "*.py")
