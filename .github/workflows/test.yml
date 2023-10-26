@@ -27,7 +27,6 @@ jobs:
           environment-file: environment.yml
           environment-name: swe4s
       - run: |
-            conda activate swe4s
             bash test/func/test_print_fires.sh  
 
     
@@ -43,5 +42,5 @@ jobs:
           environment-file: environment.yml
           environment-name: swe4s
       - run: |
-          conda activate swe4s
+          cd src
           pycodestyle $(git ls-files "*.py")
